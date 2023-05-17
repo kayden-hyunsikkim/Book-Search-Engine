@@ -26,13 +26,7 @@ const SavedBooks = () => {
           return false;
         }
 
-        const response = await fetch('/api/users/me', {
-          headers: {
-            'Content-Type': 'application/json',
-            authorization: `Bearer ${token}`,
-          },
-        });
-
+        const response = await getMe(token);
 
         if (!response.ok) {
           throw new Error('something went wrong!');
@@ -57,13 +51,8 @@ const SavedBooks = () => {
     }
 
     try {
-      const response = await fetch(`/api/users/books/${bookId}`, {
-        method: 'DELETE',
-        headers: {
-          authorization: `Bearer ${token}`,
-        },
-      })
-      
+      const response = await deleteBook(bookId, token);
+
       if (!response.ok) {
         throw new Error('something went wrong!');
       }
