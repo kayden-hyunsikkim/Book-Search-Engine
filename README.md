@@ -44,7 +44,7 @@ npm run develop
 
 #### Heroku Deployment
 
-[Click me to see app!](https://book-search-mern.onrender.com/)
+[Click me to see app!](https://google-book-searchengine.herokuapp.com/)
 
 - Create heroku app
 
